@@ -1,3 +1,5 @@
+// app.controller.ts
+
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
 import { ConfigService } from '@nestjs/config';
@@ -14,7 +16,7 @@ export class AppController {
     const CatFactResponse = await this.appService.getData();
 
     return {
-      status: 200,
+      "status": "success", 
       user: {
         email: this.config.get<string>('EMAIL'),
         name: this.config.get<string>('FULLNAME'),
